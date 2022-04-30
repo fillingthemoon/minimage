@@ -149,17 +149,17 @@ const Home = (props: {}) => {
               })}
               mb={8}
               border="2px dashed"
-              borderColor="gray.400"
+              borderColor="primary.500"
               p={4} borderRadius="10px"
-              color="gray.400"
-              bg={isDragActive ? 'gray.200' : 'white.500'}
+              bg={isDragActive ? 'primary.200' : 'white.500'}
             >
               {/* <input type="file" onChange={selectImgsToCompress} /> */}
               <input {...getInputProps()} />
-              <Text>{`Drag 'n' drop your file here, or click to select file (max. 1 file)`}</Text>
+              <Text>{`Drag 'n' drop your file here or click to select file (max. 1 file, 5MB)`}</Text>
             </Flex>
             {initialImgSize &&
               <Box mb={8}>
+                <Text mb={4}>{`File name: ${initialFn}`}</Text>
                 <Box mb={8}>
                   <Text>{`Initial Image Size: ${Math.trunc(initialImgSize)} kB`}</Text>
                   {compressedImgSize && <Text>{`Compressed Image Size: ${Math.trunc(compressedImgSize)} kB`}</Text>}
