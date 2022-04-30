@@ -144,16 +144,14 @@ const Home = (props: {}) => {
         <Flex justify="center">
           <Box w="container.md">
             <Flex
-              {...getRootProps()}
+              {...getRootProps({
+                onClick: event => clearInputFiles(event)
+              })}
               mb={8}
               border="2px dashed"
               borderColor="gray.400"
               p={4} borderRadius="10px"
               color="gray.400"
-              onClick={(event) => {
-                clearInputFiles(event)
-                getRootProps().onClick(event)
-              }}
               bg={isDragActive ? 'gray.200' : 'white.500'}
             >
               {/* <input type="file" onChange={selectImgsToCompress} /> */}
@@ -210,7 +208,7 @@ const Home = (props: {}) => {
             }
           </Box>
         </Flex>
-      </Layout>
+      </Layout >
     </div >
   )
 }
